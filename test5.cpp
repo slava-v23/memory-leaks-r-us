@@ -14,7 +14,8 @@ public:
   }
   ~Box5() {
       cout << "Box deleted: " << val << endl;
-//      delete[](iptr); // <🟢 leak if added
+    //  delete[] iptr; // <🟢 leak if added
+    //  iptr = nullptr;
   }
 };
 

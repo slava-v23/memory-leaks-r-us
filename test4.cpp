@@ -13,8 +13,17 @@ public:
     iptr = new int[10];
   }
   ~Box() {
-      cout << "Box deleted: " << val << endl;
-//      delete[] iptr; // <🟢 leak if added
+     cout << "Box deleted: " << val << endl;
+    delete[] iptr;
+    iptr = nullptr; // <🟢 ? added
+  }
+  Box(const Box& other) {
+    val = other.val;
+    iptr = new int[10];
+    for (int i = 0; i < 10; i++) {
+      iptr[i] = other.iptr[i];
+    }
+    cout << "Box copied: " << val << endl;
   }
 };
 

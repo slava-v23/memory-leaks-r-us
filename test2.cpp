@@ -32,8 +32,12 @@ int NodeTest2::nodeCount = 0;
 NodeTest2 *find(NodeTest2 *start, int value) {
     assert(start != nullptr);
     NodeTest2 *curr = start;
+    cout << curr->value << " - "<< value <<endl;
     while (curr != nullptr && curr->value != value) {
         curr = curr->next;
+    }
+    if (curr == nullptr) {
+        return nullptr;
     }
     return curr;
 }
@@ -66,15 +70,12 @@ NodeTest2 *addBefore(NodeTest2 *start, int valA, int valB) {
 NodeTest2 *remove(NodeTest2 *start, NodeTest2 *n) {
     assert(start != nullptr);
     NodeTest2 *curr = start;
-//    cout << "🔆0"<<endl;
     while (curr != nullptr && curr->next != n) {
         curr = curr->next;
     }
-//    cout << "🔆1"<<endl;
     if (curr != nullptr) {
         curr->next = n; // <🟢 fixed (was 'n->next' for int)
     }
-//    cout << "🔆2"<<endl;
     delete(n);// <🟢 Added
     return start;
 }
@@ -100,21 +101,17 @@ void test2() {
         tail = addAfter(tail, new NodeTest2(i * i * i));
     }
     displayAll(head);
-//    cout << "🍎0"<<endl;
     addBefore(head, 7, 8);
     addBefore(head, 13, 125);
     addBefore(head, 15, 9);
     addBefore(head, 17, 11);
-//    cout << "🍎1"<<endl;
 
     addBefore(head, 19, 100); // <🟢 Added
     displayAll(head);
-//    cout << "🍎2"<<endl;
     remove(head, find(head, 8));
     remove(head, find(head, 77));
     remove(head, find(head, 100));
     remove(head, find(head, 19));
-//    cout << "🍎3"<<endl;
     displayAll(head);
 
 //    delete(head); // <🟢 If I add this >> error 'pointer being freed was not allocated'

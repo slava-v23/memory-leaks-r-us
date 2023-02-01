@@ -1,11 +1,11 @@
 Removing previous executable: rm -f ./a.out
 Compiling: clang++ -g -std=c++11 *.cpp
 Executing with valgrind: valgrind ./a.out
-==2425022== Memcheck, a memory error detector
-==2425022== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
-==2425022== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
-==2425022== Command: ./a.out
-==2425022== 
+==2436808== Memcheck, a memory error detector
+==2436808== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==2436808== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==2436808== Command: ./a.out
+==2436808== 
 Starting memory-leaks-r-us....
 Creating N<1, 0>, total created: 1
 Creating N<3, 0>, total created: 2
@@ -49,277 +49,67 @@ Deleting: N<4, 0>, nodes remaining: 3
 Deleting: N<1, 0>, nodes remaining: 2
 Deleting: N<0, 0>, nodes remaining: 1
 Deleting: N<1, 0>, nodes remaining: 0
-Creating N<100, 0>, total created: 1
-Creating N<1, 0>, total created: 2
-Creating N<8, 0>, total created: 3
-Creating N<27, 0>, total created: 4
-Creating N<64, 0>, total created: 5
-Creating N<125, 0>, total created: 6
-[N<100, 1>, N<1, 1>, N<8, 1>, N<27, 1>, N<64, 1>, N<125, 0>]
-Creating N<7, 0>, total created: 7
-Deleting: N<7, 1>, nodes remaining: 6
-==2425022== Invalid read of size 4
-==2425022==    at 0x401CC3: find(NodeTest2*, int) (test2.cpp:35)
-==2425022==    by 0x401DF5: addBefore(NodeTest2*, int, int) (test2.cpp:54)
-==2425022==    by 0x402194: test2() (test2.cpp:105)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b0 is 0 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-==2425022== Invalid read of size 8
-==2425022==    at 0x401CE2: find(NodeTest2*, int) (test2.cpp:36)
-==2425022==    by 0x401DF5: addBefore(NodeTest2*, int, int) (test2.cpp:54)
-==2425022==    by 0x402194: test2() (test2.cpp:105)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b8 is 8 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-Creating N<13, 0>, total created: 7
-==2425022== Invalid read of size 8
-==2425022==    at 0x401E46: addBefore(NodeTest2*, int, int) (test2.cpp:58)
-==2425022==    by 0x402194: test2() (test2.cpp:105)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b8 is 8 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-==2425022== Invalid read of size 8
-==2425022==    at 0x401E58: addBefore(NodeTest2*, int, int) (test2.cpp:59)
-==2425022==    by 0x402194: test2() (test2.cpp:105)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b8 is 8 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-Deleting: N<13, 1>, nodes remaining: 6
-==2425022== Invalid read of size 4
-==2425022==    at 0x401CC3: find(NodeTest2*, int) (test2.cpp:35)
-==2425022==    by 0x401DF5: addBefore(NodeTest2*, int, int) (test2.cpp:54)
-==2425022==    by 0x4021A7: test2() (test2.cpp:106)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b0 is 0 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-==2425022== Invalid read of size 8
-==2425022==    at 0x401CE2: find(NodeTest2*, int) (test2.cpp:36)
-==2425022==    by 0x401DF5: addBefore(NodeTest2*, int, int) (test2.cpp:54)
-==2425022==    by 0x4021A7: test2() (test2.cpp:106)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b8 is 8 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-Creating N<15, 0>, total created: 7
-==2425022== Invalid read of size 8
-==2425022==    at 0x401E46: addBefore(NodeTest2*, int, int) (test2.cpp:58)
-==2425022==    by 0x4021A7: test2() (test2.cpp:106)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b8 is 8 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-==2425022== Invalid read of size 8
-==2425022==    at 0x401E58: addBefore(NodeTest2*, int, int) (test2.cpp:59)
-==2425022==    by 0x4021A7: test2() (test2.cpp:106)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b8 is 8 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-Deleting: N<15, 0>, nodes remaining: 6
-==2425022== Invalid read of size 4
-==2425022==    at 0x401CC3: find(NodeTest2*, int) (test2.cpp:35)
-==2425022==    by 0x401DF5: addBefore(NodeTest2*, int, int) (test2.cpp:54)
-==2425022==    by 0x4021BA: test2() (test2.cpp:107)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b0 is 0 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-==2425022== Invalid read of size 8
-==2425022==    at 0x401CE2: find(NodeTest2*, int) (test2.cpp:36)
-==2425022==    by 0x401DF5: addBefore(NodeTest2*, int, int) (test2.cpp:54)
-==2425022==    by 0x4021BA: test2() (test2.cpp:107)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b8 is 8 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-Creating N<17, 0>, total created: 7
-==2425022== Invalid read of size 8
-==2425022==    at 0x401E46: addBefore(NodeTest2*, int, int) (test2.cpp:58)
-==2425022==    by 0x4021BA: test2() (test2.cpp:107)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b8 is 8 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-==2425022== Invalid read of size 8
-==2425022==    at 0x401E58: addBefore(NodeTest2*, int, int) (test2.cpp:59)
-==2425022==    by 0x4021BA: test2() (test2.cpp:107)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b8 is 8 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-==2425022== Invalid write of size 8
-==2425022==    at 0x401E87: addBefore(NodeTest2*, int, int) (test2.cpp:61)
-==2425022==    by 0x4021BA: test2() (test2.cpp:107)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b50258 is 8 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x4021A7: test2() (test2.cpp:106)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x4021A7: test2() (test2.cpp:106)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-Deleting: N<17, 0>, nodes remaining: 6
-Creating N<19, 0>, total created: 7
-==2425022== Invalid read of size 8
-==2425022==    at 0x401E46: addBefore(NodeTest2*, int, int) (test2.cpp:58)
-==2425022==    by 0x4021CD: test2() (test2.cpp:110)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b8 is 8 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-==2425022== Invalid read of size 8
-==2425022==    at 0x401E58: addBefore(NodeTest2*, int, int) (test2.cpp:59)
-==2425022==    by 0x4021CD: test2() (test2.cpp:110)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Address 0x5b501b8 is 8 bytes inside a block of size 16 free'd
-==2425022==    at 0x4C3A021: operator delete(void*) (vg_replace_malloc.c:923)
-==2425022==    by 0x401EAE: addBefore(NodeTest2*, int, int) (test2.cpp:62)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  Block was alloc'd at
-==2425022==    at 0x4C378C3: operator new(unsigned long) (vg_replace_malloc.c:422)
-==2425022==    by 0x401E03: addBefore(NodeTest2*, int, int) (test2.cpp:55)
-==2425022==    by 0x402181: test2() (test2.cpp:104)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022== 
-==2425022== 
-==2425022== Process terminating with default action of signal 11 (SIGSEGV)
-==2425022==  Access not within mapped region at address 0x8
-==2425022==    at 0x401E46: addBefore(NodeTest2*, int, int) (test2.cpp:58)
-==2425022==    by 0x4021CD: test2() (test2.cpp:110)
-==2425022==    by 0x401613: main (main.cpp:24)
-==2425022==  If you believe this happened as a result of a stack
-==2425022==  overflow in your program's main thread (unlikely but
-==2425022==  possible), you can try to increase the size of the
-==2425022==  main thread stack using the --main-stacksize= flag.
-==2425022==  The main thread stack size used in this run was 8388608.
-==2425022== 
-==2425022== HEAP SUMMARY:
-==2425022==     in use at exit: 81,008 bytes in 9 blocks
-==2425022==   total heap usage: 20 allocs, 11 frees, 81,400 bytes allocated
-==2425022== 
-==2425022== LEAK SUMMARY:
-==2425022==    definitely lost: 16 bytes in 1 blocks
-==2425022==    indirectly lost: 16 bytes in 1 blocks
-==2425022==      possibly lost: 0 bytes in 0 blocks
-==2425022==    still reachable: 80,976 bytes in 7 blocks
-==2425022==         suppressed: 0 bytes in 0 blocks
-==2425022== Rerun with --leak-check=full to see details of leaked memory
-==2425022== 
-==2425022== For lists of detected and suppressed errors, rerun with: -s
-==2425022== ERROR SUMMARY: 33 errors from 15 contexts (suppressed: 0 from 0)
-./runmemcheck.sh: line 19: 2425022 Segmentation fault      (core dumped) valgrind ./a.out
+Created abc
+Created wxy
+Deleting qbc
+Deleting qbc
+Deleting qbc
+test3 is done
+Deleting qbc
+Deleting qbc
+Deleting qbc
+Deleting qbc
+Deleting qbc
+Deleting qbc
+Box created: 10
+Box copied: 10
+Box deleted: 10
+Box deleted: 10
+Box created: 0
+Box deleted: 0
+Box created: 1
+Box deleted: 0
+Box deleted: 1
+Box created: 2
+Box deleted: 0
+Box deleted: 1
+Box deleted: 2
+Box created: 3
+Box deleted: 3
+Box created: 4
+Box deleted: 0
+Box deleted: 1
+Box deleted: 2
+Box deleted: 3
+Box deleted: 4
+Box created: 0
+Box deleted: 0
+Box created: 100
+Box deleted: 100
+Box created: 200
+Box deleted: 200
+Box created: 300
+Box deleted: 300
+Box created: 400
+Box deleted: 400
+Box deleted: 0
+Box deleted: 1
+Box deleted: 2
+Box deleted: 3
+Box deleted: 4
+Successfully completed memory-leaks-r-us....
+==2436808== 
+==2436808== HEAP SUMMARY:
+==2436808==     in use at exit: 720 bytes in 14 blocks
+==2436808==   total heap usage: 43 allocs, 29 frees, 82,544 bytes allocated
+==2436808== 
+==2436808== LEAK SUMMARY:
+==2436808==    definitely lost: 616 bytes in 13 blocks
+==2436808==    indirectly lost: 104 bytes in 1 blocks
+==2436808==      possibly lost: 0 bytes in 0 blocks
+==2436808==    still reachable: 0 bytes in 0 blocks
+==2436808==         suppressed: 0 bytes in 0 blocks
+==2436808== Rerun with --leak-check=full to see details of leaked memory
+==2436808== 
+==2436808== For lists of detected and suppressed errors, rerun with: -s
+==2436808== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
