@@ -12,7 +12,10 @@ public:
     cout << "Box created: " << val << endl;
     iptr = new int[10];
   }
-  ~Box5() { cout << "Box deleted: " << val << endl; }
+  ~Box5() {
+      cout << "Box deleted: " << val << endl;
+//      delete[](iptr); // <🟢 leak if added
+  }
 };
 
 void test5() {
@@ -26,5 +29,7 @@ void test5() {
   for (int i = 0; i < 5; i++) {
     Box5 *bptr = new Box5(i * 100);
     boxptrs.push_back(bptr);
+    delete(bptr);
   }
+
 }

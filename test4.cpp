@@ -12,7 +12,10 @@ public:
     cout << "Box created: " << val << endl;
     iptr = new int[10];
   }
-  ~Box() { cout << "Box deleted: " << val << endl; }
+  ~Box() {
+      cout << "Box deleted: " << val << endl;
+//      delete[] iptr; // <🟢 leak if added
+  }
 };
 
 void test4() {

@@ -20,11 +20,13 @@ void test5();
 
 int main() {
   cout << "Starting memory-leaks-r-us...." << endl;
-  // test1();
-  // test2();
-  // test3();
-  // test4();
-  // test5();
+   test1();
+   test2();
+   test3();
+   test4();
+//    cout << "🌻0"<<endl;
+   test5();
+    cout << "🌻END"<<endl;
   cout << "Successfully completed memory-leaks-r-us...." << endl;
   return 0;
 }
